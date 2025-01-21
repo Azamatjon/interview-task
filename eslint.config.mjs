@@ -33,9 +33,12 @@ export default tseslint.config(
     },
   },
     {
-      files: ['**/*.spec.ts', '**/*.test.ts'], // Target test files
+      files: ['**/*.spec.ts', '**/*.e2e-spec.ts', '**/*.test.ts'], // Target test files
       rules: {
         '@typescript-eslint/unbound-method': 'off', // Disable the rule in test files
+        '@typescript-eslint/no-unsafe-argument': 'off', // Disable the rule in test files
+        '@typescript-eslint/no-unsafe-member-access': 'off', // Disable the rule in test files
+        '@typescript-eslint/no-unsafe-assignment': 'off', // Disable the rule in test files
       },
     },
 );

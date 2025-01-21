@@ -25,7 +25,7 @@ export class ItemService {
       .leftJoin('group.items', 'item')
       .where('user.username = :username', { username })
       .select('DISTINCT item.title', 'title')
-      .getRawMany();
+      .getRawMany<{ title: string }>();
 
     if (items.length === 0) {
       throw new NotFoundException(
